@@ -1,11 +1,13 @@
 # 🎹 Aura Piano — Concert Grand Interactive Learning Studio
 
-[![Deploy Aura Piano to GitHub Pages](https://github.com/yukthashreegr15ganesh-hub/aura-piano/actions/workflows/deploy.yml/badge.svg)](https://github.com/yukthashreegr15ganesh-hub/aura-piano/actions/workflows/deploy.yml)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Play%20Online-amber?style=flat&logo=github)](https://yukthashreegr15ganesh-hub.github.io/aura-piano/)
+[![Google Cloud Deployed](https://img.shields.io/badge/Google%20Cloud-Deployed%20Live-4285F4?style=flat&logo=googlecloud&logoColor=white)](https://aura-piano-studio.web.app)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-amber?style=flat&logo=github)](https://yukthashreegr15ganesh-hub.github.io/aura-piano/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **Live Deployment:** [https://yukthashreegr15ganesh-hub.github.io/aura-piano/](https://yukthashreegr15ganesh-hub.github.io/aura-piano/)  
-> **GitHub Repository:** [https://github.com/yukthashreegr15ganesh-hub/aura-piano](https://github.com/yukthashreegr15ganesh-hub/aura-piano)
+> ☁️ **Google Cloud Live URL:** [https://aura-piano-studio.web.app](https://aura-piano-studio.web.app)  
+> 🌐 **Alternative Firebase Mirror:** [https://aura-piano-studio.firebaseapp.com](https://aura-piano-studio.firebaseapp.com)  
+> 🐙 **GitHub Pages Deployment:** [https://yukthashreegr15ganesh-hub.github.io/aura-piano/](https://yukthashreegr15ganesh-hub.github.io/aura-piano/)  
+> 📂 **GitHub Repository:** [https://github.com/yukthashreegr15ganesh-hub/aura-piano](https://github.com/yukthashreegr15ganesh-hub/aura-piano)
 
 A full-stack, production-grade interactive piano learning studio featuring falling notes, an ultra-low-latency Yamaha C5 Salamander Concert Grand audio engine, synchronized real-time karaoke accompaniment & melody guide, tailored practice analytics, and MIDI import.
 
