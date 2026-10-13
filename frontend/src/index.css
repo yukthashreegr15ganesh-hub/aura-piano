@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fdfbf7;
+  --color-gold-100: #fbf7ee;
+  --color-gold-200: #f6eed6;
+  --color-gold-300: #eddcae;
+  --color-gold-400: #e0c27e;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b89228;
+  --color-gold-700: #926f1e;
+  --color-gold-800: #77571d;
+  --color-gold-900: #64481c;
+
+  --color-studio-black: #07080a;
+  --color-studio-darker: #0c0d11;
+  --color-studio-dark: #12141a;
+  --color-studio-surface: #181b22;
+  --color-studio-panel: rgba(22, 25, 34, 0.85);
+  --color-studio-border: rgba(212, 175, 55, 0.18);
+  --color-studio-borderHighlight: rgba(212, 175, 55, 0.45);
+  --color-studio-amber: #f59e0b;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --shadow-piano-glow: 0 0 35px -5px rgba(212, 175, 55, 0.25);
+  --shadow-amber-glow: 0 0 25px 2px rgba(245, 158, 11, 0.35);
+  --shadow-key-press: 0 2px 10px rgba(245, 158, 11, 0.5), inset 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-gold-glow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+:root {
+  color-scheme: dark;
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #07080a;
+  color: #f3f4f6;
+  user-select: none;
+  -webkit-user-select: none;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 12, 16, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.5);
+}
+
+/* Realistic 3D Piano Chassis */
+.perspective-piano {
+  perspective: 1400px;
+  perspective-origin: 50% 25%;
+}
+
+.piano-chassis {
+  transform: rotateX(8deg);
+  transform-style: preserve-3d;
+  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.95), 0 0 50px 5px rgba(212, 175, 55, 0.08);
+}
+
+/* White Key Styling */
+.white-key {
+  background: linear-gradient(to bottom, #faf7f2 0%, #f4ede2 65%, #eae1d3 95%, #ded3c1 100%);
+  box-shadow: inset 1px 0 2px rgba(255,255,255,0.8),
+              inset -1px 0 2px rgba(0,0,0,0.15),
+              inset 0 -4px 6px rgba(0,0,0,0.2),
+              0 6px 12px rgba(0,0,0,0.4);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  transition: transform 0.05s ease-out, background 0.05s ease-out, box-shadow 0.05s ease-out;
+  transform-origin: top center;
+}
+
+.white-key.active, .white-key:active {
+  transform: translateY(4px) rotateX(2.5deg);
+  background: linear-gradient(to bottom, #fffaec 0%, #fef3db 65%, #fde8be 95%, #f5d697 100%);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3),
+              0 2px 6px rgba(0,0,0,0.6),
+              0 0 22px rgba(245, 158, 11, 0.6);
+}
+
+/* Black Key Styling */
+.black-key {
+  background: linear-gradient(to bottom, #282b31 0%, #17191d 25%, #0d0f12 75%, #050608 100%);
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.25),
+              inset -1px -1px 2px rgba(0,0,0,0.6),
+              2px 8px 14px rgba(0,0,0,0.7);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  transition: transform 0.05s ease-out, background 0.05s ease-out, box-shadow 0.05s ease-out;
+  transform-origin: top center;
+}
+
+.black-key::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 15%;
+  width: 70%;
+  height: 85%;
+  background: linear-gradient(to right, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.02) 100%);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.black-key.active, .black-key:active {
+  transform: translateY(3.5px) rotateX(3deg);
+  background: linear-gradient(to bottom, #382c16 0%, #291e0a 30%, #171105 100%);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.5),
+              0 2px 8px rgba(0,0,0,0.8),
+              0 0 24px rgba(245, 158, 11, 0.7);
+}
+
+/* Red felt cloth buffer above keys */
+.piano-felt {
+  background: linear-gradient(to bottom, #7f1218 0%, #b91c1c 45%, #991b1b 80%, #5b0c10 100%);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.6), 0 2px 6px rgba(0,0,0,0.7);
+}
+
+/* Gold text glow */
+.gold-text-glow {
+  text-shadow: 0 0 16px rgba(212, 175, 55, 0.45);
+}
